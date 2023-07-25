@@ -1,0 +1,39 @@
+﻿<Page x:Class="NotarialHelper.Pages.DealPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NotarialHelper.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DealPage">
+
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ToolBar Grid.Row="0" FontSize="14" FontFamily="Bahnschrift SemiBold">
+            <Button x:Name="AddClientButton" Click="AddClientButton_Click">Записать</Button>
+            <Separator />
+            <Button x:Name="SearchButton">Найти:</Button>
+            <TextBox x:Name="SearchTextBar" Foreground="LightGray" MinWidth="200"></TextBox>
+        </ToolBar>
+
+        <Border Grid.Row="1">
+            <DataGrid x:Name="DealsGrid" AutoGenerateColumns="True"
+                      RowBackground="Wheat" FontFamily="Bahnschrift Light" FontSize="20" HorizontalContentAlignment="Center">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=IdDeal}" MinWidth="30"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Path=NameClient}" MinWidth="200" />
+                    <DataGridTextColumn Header="Услуга" Binding="{Binding Path=NameService}" MinWidth="150" />
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Path=SumDeal}" MinWidth="80"/>
+                    <DataGridTextColumn Header="Комиссия" Binding="{Binding Path=ComissionDeal}" MinWidth="80"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}" MinWidth="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+    </Grid>
+</Page>

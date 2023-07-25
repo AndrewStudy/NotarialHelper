@@ -1,0 +1,28 @@
+﻿<Window x:Class="NotarialHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotarialHelper"
+        mc:Ignorable="d"
+        Title="Нотариальный Помощник" Height="480" Width="720" WindowStartupLocation ="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Background="DeepSkyBlue">
+            <MenuItem Header="Home" Margin="5 5 5 5" FontFamily="Bahnschrift SemiBold" FontSize="22" FontWeight="Bold" Foreground="White" Background="DeepSkyBlue" Click="MenuItem_Click" />
+            <MenuItem Header="Запись" Margin="10 5 10 5" FontFamily="Bahnschrift SemiBold" FontSize="22" Foreground="White" Background="DeepSkyBlue">
+                <MenuItem Header="Сделки" Background="DeepSkyBlue" Foreground="Black" Click="ToDealsMenu_Click"/>
+                <MenuItem Header="Услуги" Background="DeepSkyBlue" Foreground="Black" Click="ToServiceMenu_Click"/>
+                <MenuItem Header="Клиенты" Background="DeepSkyBlue" Foreground="Black" Click="ToClientsMenu_Click"/>
+            </MenuItem>
+            <MenuItem Header="Экспорт" Margin="10 5 10 5" FontFamily="Bahnschrift SemiBold" FontSize="22" Foreground="White" Background="DeepSkyBlue">
+                <MenuItem Header="Excel" Background="DeepSkyBlue" Foreground="Black" Click="ToExcelMenu_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" Loaded="MainFrame_Loaded" ContextMenuClosing="MainFrame_ContextMenuClosing"/>
+    </Grid>
+</Window>

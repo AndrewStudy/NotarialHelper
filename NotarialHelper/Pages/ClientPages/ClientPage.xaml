@@ -1,0 +1,68 @@
+﻿<Page x:Class="NotarialHelper.Pages.ClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NotarialHelper.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="720"
+      Title="ClientPage">
+
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ToolBar Grid.Row="0" FontSize="14" FontFamily="Bahnschrift SemiBold">
+            <Button x:Name="AddClientButton" Click="AddClientButton_Click">Записать</Button>
+            <Separator />
+            <Button x:Name="SearchButton">Найти:</Button>
+            <TextBox x:Name="SearchTextBar" Foreground="LightGray" MinWidth="200"></TextBox>
+        </ToolBar>
+
+        <Border Grid.Row="1">
+            <DataGrid x:Name="ClientsGrid" AutoGenerateColumns="False"
+                      RowBackground="Wheat" FontFamily="Bahnschrift Light" FontSize="20" IsReadOnly="True"
+                      CanUserReorderColumns="False" ColumnWidth="SizeToHeader" MaxColumnWidth="300">
+                <DataGrid.BindingGroup>
+                    <BindingGroup/>
+                </DataGrid.BindingGroup>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding IdClient}" MinWidth="30" />
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding FullName}" MinWidth="350" Width="*"/>
+                    <DataGridTextColumn Header="Вид деятельности" Binding="{Binding KindActivity}" MinWidth="120"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" MinWidth="220"/>
+                    <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" MinWidth="150"/>
+                </DataGrid.Columns>
+
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <Grid Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+                                <TextBlock Text="Номер дела:"/>
+                                <TextBlock Text="{Binding Path=IdDeal}"/>
+                                <TextBlock Text="Сумма:"/>
+                                <TextBlock Text="{Binding Path=Sum}"/>
+                                <TextBlock Text="Комиссия:"/>
+                                <TextBlock Text="{Binding Path=Comission}"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.Column="1" Text="{Binding Path=Description}"/>
+
+                        </Grid>
+                        
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+</Page>
