@@ -1,20 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotarialHelper.Pages.DealPages;
+using NotarialHelper.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace NotarialHelper.Pages
 {
     /// <summary>
@@ -24,6 +19,7 @@ namespace NotarialHelper.Pages
     {
         private RecordDeal _recordDeal;
         private NotarialOfficeContext _dbContext;
+        private string _idDeal;
 
 #pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         public DealPage()
@@ -64,6 +60,26 @@ namespace NotarialHelper.Pages
             {
                 DealsGrid.Items.Add(deal);
             }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new NotarialOfficeContext())
+            {
+                if(this._idDeal != null)
+                {
+                var deal = context.Deals.Where(d => d.IdDeal == Convert.ToInt32(this._idDeal)).Single();
+                context.Deals.Remove(deal);
+                context.SaveChanges();
+                }
+            }
+        }
+
+        private void DealsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = DealsGrid.SelectedCells[0];
+            var content = (item.Column.GetCellContent(item.Item) as TextBlock).Text;
+            this._idDeal = content;
         }
     }
 }

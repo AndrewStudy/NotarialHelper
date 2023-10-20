@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Private\source\repos\NotarialHelper\NotarialHelper\obj\Debug\net6.0-windows\
+C:\Users\Private\source\repos\C# WPF\NotarialHelper\NotarialHelper\obj\Debug\net6.0-windows\
 NotarialHelper
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Private\source\repos\NotarialHelper\NotarialHelper\App.xaml
+C:\Users\Private\source\repos\C# WPF\NotarialHelper\NotarialHelper\App.xaml
 9-1706887502
 
 171567996997
-2221834103602
+222-735451504
 HomePage.xaml;MainWindow.xaml;Pages\ClientPages\ClientPage.xaml;Pages\ClientPages\RecordClient.xaml;Pages\DealPages\DealPage.xaml;Pages\DealPages\RecordDeal.xaml;Pages\ExportPages\ExportToExcelPage.xaml;Pages\ServicePages\RecorsService.xaml;Pages\ServicePages\ServicePage.xaml;
 
-True
+False
 

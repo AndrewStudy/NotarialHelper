@@ -17,13 +17,15 @@
         <ToolBar Grid.Row="0" FontSize="14" FontFamily="Bahnschrift SemiBold">
             <Button x:Name="AddClientButton" Click="AddClientButton_Click">Записать</Button>
             <Separator />
+            <Button x:Name="DeleteButton" Click="DeleteButton_Click">Удалить:</Button>
+            <Separator />
             <Button x:Name="SearchButton">Найти:</Button>
             <TextBox x:Name="SearchTextBar" Foreground="LightGray" MinWidth="200"></TextBox>
         </ToolBar>
 
         <Border Grid.Row="1">
-            <DataGrid x:Name="DealsGrid" AutoGenerateColumns="True"
-                      RowBackground="Wheat" FontFamily="Bahnschrift Light" FontSize="20" HorizontalContentAlignment="Center">
+            <DataGrid x:Name="DealsGrid" AutoGenerateColumns="True"  SelectionMode="Single"
+                      RowBackground="Wheat" FontFamily="Bahnschrift Light" FontSize="20" HorizontalContentAlignment="Center" SelectionChanged="DealsGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Binding="{Binding Path=IdDeal}" MinWidth="30"/>
                     <DataGridTextColumn Header="Клиент" Binding="{Binding Path=NameClient}" MinWidth="200" />

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oxi8OyypQrJI9vwm4CB4VlKxW9+G8h92UGOncn0j2N46yZOqdTDfQRGYoYg/gsdOUgekoumI+QfsPhX5VvLvsA==",
+  "dgSpecHash": "jAe+eO/xvfHH0OYTtwO3lXeZqSpQnP72930AFgIOCXlo5ZdYdJFLs3Zx4GwYqKLYwhAkCLTsnSNGbKTU+i+KVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Private\\source\\repos\\NotarialHelper\\NotarialHelper\\NotarialHelper.csproj",
+  "projectFilePath": "C:\\Users\\Private\\source\\repos\\C# WPF\\NotarialHelper\\NotarialHelper\\NotarialHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Private\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Private\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
